@@ -14,7 +14,7 @@ data Pila a = Vacia
             | Nodo a (Pila a)
             --deriving Show -- ?? 
 {-
-El inconveniente de usar derivin show es que si queremos ocultar detalles de implementacion deriving show
+El inconveniente de usar deriving show es que si queremos ocultar detalles de implementacion deriving show
 imprimira los constructores, para evitarlo debemos crear una instancia de show con la precondicion de que el 
 tipo base derive show tambien
 -}

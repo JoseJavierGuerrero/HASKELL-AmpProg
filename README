@@ -1,0 +1,7 @@
+Ejercicios de Haskell correspondientes a la asignatura Ampliaci—n de Programaci—n.
+
+Ficheros incluidos:
+	¥ Pila.hs: Implementaci—n del TAD Pila, plegado de pilas y map.
+	¥ UsoPila.hs: Operaciones sobre pilas, como tipo transparente y 	  como tipo abstracto.
+	¥ BolsaLin.hs: Implementaci—n del TAD Bolsa en su versi—n lineal 	  (empleando listas), as’ como algunas operaciones sobre bolsas y 	  su comprobaci—n mediante el uso de la librer’a QuickCheck
+		

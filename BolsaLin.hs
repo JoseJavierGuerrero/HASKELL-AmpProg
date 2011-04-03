@@ -55,6 +55,8 @@ bolsaALista' ((x,n):xs)
 tamaño :: Ord a => Bolsa a -> Int
 tamaño [] = 0
 tamaño ((x,n):xs) = n + tamaño xs
+-- tamaño = sum . map snd       -- Mas bonito
+
 
 apariciones :: Ord a => a -> Bolsa a -> Int
 apariciones _ [] = 0
@@ -79,13 +81,13 @@ prop_tamaño xs = tamaño (listaABolsa xs) == length xs
                 
 
 -- apariciones funciona correctamente
- prop_apariciones xs = 
+ -- prop_apariciones xs = 
 
 
 --Numero de ocurrencias en una lista
 
-ocurrencias :: a -> [a] -> Int
-ocurrencias x xs = length [_| y<-xs,x==y]
+ocurrencias :: Eq a => a -> [a] -> Int
+ocurrencias x xs = length [ 1 | y<-xs,x==y]
 
 
 -- las listas devueltas por bolsaALista están ordenadas

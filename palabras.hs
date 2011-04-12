@@ -1,6 +1,7 @@
 module Main where
 
 import System.Environment
+import System.Exit
 import Data.Char
 import BolsaLog
 import Tokeniser
@@ -11,6 +12,8 @@ main :: IO ()
 main = do 
               args <- getArgs
               listaPalabras <- readFile (head args)
+					`catch`
+							\_ -> ioError (userError "ERROR. El fichero no existe o no es accesible.")
               putStr (cuentaPalabras listaPalabras)
 
 

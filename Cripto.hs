@@ -23,12 +23,9 @@ module Main where
 							temp = read . head . tail . tail $ args
 							opcion = head . tail . tail . tail $ args
 							clave = temp `mod` 255
-						print clave
 						origen <- readFile fichorigen
 							`catch`
-								\_ -> do
-										putStrLn "ERROR. El fichero origen no existe. "
-										exitFailure
+								\_ -> ioError (userError "ERROR. El fichero origen no existe o no es accesible.")
 						if opcion == "e"
 							then writeFile fichdestino $ encripta clave origen
 							else  if opcion == "d"

@@ -295,8 +295,6 @@ preguntaOK xs = do
 		preguntaOK xs 
 
 
---como evito el res al final o como hago para que funcione bien la recursion?
-
 preguntasX :: IO (String, Integer)
 preguntasX = do 
   nombre <- preguntaOK "¿como te llamas?"
@@ -306,7 +304,6 @@ preguntasX = do
 
 intenta :: IO a -> IO (Either IOError a)
 intenta io = do 
-                      r <- io              -- he hecho esto guiándome por la def de try pero no se bien porque, preguntar
-                      return (Right r)
+                      r <- io              
           `catch`
                            \l -> return (Left l)   -- se puede eta-reducir

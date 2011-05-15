@@ -11,10 +11,6 @@ ventanaDurmiente segs = gui prog
 							update
 							sleep (1000 * segs)
 							quit
-							
-							
-							
---Bucea mucho tio.
 
 --Ej 1 -> Buscar informacion sobre el atributo Position => Positioned
 
